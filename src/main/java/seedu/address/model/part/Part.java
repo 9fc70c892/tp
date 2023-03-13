@@ -1,7 +1,7 @@
-package seedu.address.model.service;
+package seedu.address.model.part;
 
+import seedu.address.model.part.exception.InsufficientPart;
 import seedu.address.model.entity.Entity;
-import seedu.address.model.service.exception.InsufficientPart;
 
 /**
  * This class represents a vehicle part.
@@ -16,6 +16,15 @@ public class Part {
     private Entity purchasedFrom;
     private int cost;
     private PartType type;
+
+    public boolean isSamePart(Part otherPart) {
+        if (otherPart == this) {
+            return true;
+        }
+
+        return otherPart != null
+                && otherPart.getName().equals(getName());
+    }
 
     /**
      * This represents the various types of vehicle parts.

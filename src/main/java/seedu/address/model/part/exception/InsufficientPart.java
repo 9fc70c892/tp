@@ -1,6 +1,6 @@
-package seedu.address.model.service.exception;
+package seedu.address.model.part.exception;
 
-import seedu.address.model.service.Part;
+import seedu.address.model.part.Part;
 
 /**
  * This exception is raised when there is insufficient parts.

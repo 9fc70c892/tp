@@ -2,7 +2,7 @@ package seedu.address.model;
 
 import java.util.ArrayList;
 
-import seedu.address.model.service.Service;
+import seedu.address.model.service.Service.Service;
 
 /**
  * The vehicle class is the superclass of all types of vehicle.

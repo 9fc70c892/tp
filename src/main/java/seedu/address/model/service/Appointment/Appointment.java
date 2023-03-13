@@ -1,4 +1,4 @@
-package seedu.address.model.service;
+package seedu.address.model.service.Appointment;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

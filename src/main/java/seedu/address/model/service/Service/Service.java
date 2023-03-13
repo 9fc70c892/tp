@@ -1,10 +1,11 @@
-package seedu.address.model.service;
+package seedu.address.model.service.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import seedu.address.model.Vehicle;
 import seedu.address.model.entity.person.Technician;
+import seedu.address.model.part.Part;
 
 /**
  * The Service class contains information about what task to be performed on the vehicle.
