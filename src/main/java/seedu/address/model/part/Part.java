@@ -1,7 +1,7 @@
 package seedu.address.model.part;
 
-import seedu.address.model.part.exception.InsufficientPart;
 import seedu.address.model.entity.Entity;
+import seedu.address.model.part.exception.InsufficientPart;
 
 /**
  * This class represents a vehicle part.
@@ -16,15 +16,6 @@ public class Part {
     private Entity purchasedFrom;
     private int cost;
     private PartType type;
-
-    public boolean isSamePart(Part otherPart) {
-        if (otherPart == this) {
-            return true;
-        }
-
-        return otherPart != null
-                && otherPart.getName().equals(getName());
-    }
 
     /**
      * This represents the various types of vehicle parts.
@@ -42,11 +33,11 @@ public class Part {
      * @param quantity How many in stock.
      */
     public Part(String name, PartType type, int cost, int quantity) {
-        id = ++incrementalID;
         this.name = name;
         this.type = type;
         this.cost = cost;
         this.stockLeft = quantity;
+        id = ++incrementalID;
     }
 
     /**
@@ -167,6 +158,19 @@ public class Part {
      */
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    /**
+     * Returns true if both parts have the same name.
+     * This defines a weaker notion of equality between two parts.
+     */
+    public boolean isSamePart(Part otherPart) {
+        if (otherPart == this) {
+            return true;
+        }
+
+        return otherPart != null
+                && otherPart.getName().equals(getName());
     }
 
 }

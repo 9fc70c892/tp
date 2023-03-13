@@ -1,14 +1,13 @@
 package seedu.address.model.part;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Iterator;
 import java.util.List;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import seedu.address.model.part.exception.DuplicatePartException;
 import seedu.address.model.part.exception.PartNotFoundException;
 
@@ -23,7 +22,7 @@ import seedu.address.model.part.exception.PartNotFoundException;
  *
  * @see Part#isSamePart(Part)
  */
-public class  UniquePartList implements Iterable<Part> {
+public class UniquePartList implements Iterable<Part> {
 
     private final ObservableList<Part> internalList = FXCollections.observableArrayList();
     private final ObservableList<Part> internalUnmodifiableList =
@@ -87,7 +86,7 @@ public class  UniquePartList implements Iterable<Part> {
 
     /**
      * Replaces the contents of this list with {@code persons}.
- 7`    * {@code persons} must not contain duplicate persons.
+     * {@code persons} must not contain duplicate persons.
      */
     public void setParts(List<Part> parts) {
         requireAllNonNull(parts);

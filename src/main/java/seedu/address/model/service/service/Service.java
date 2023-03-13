@@ -1,4 +1,4 @@
-package seedu.address.model.service.Service;
+package seedu.address.model.service.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
