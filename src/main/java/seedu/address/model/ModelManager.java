@@ -55,7 +55,7 @@ public class ModelManager implements Model {
         filteredTechnicians = new FilteredList<>(this.shop.getTechnicianList());
         filteredServices = new FilteredList<>(this.shop.getServiceList());
         filteredVehicles = new FilteredList<>(this.shop.getVehicleList());
-        //        filteredParts = new FilteredList<>(this.shop.getPartList());
+        //        filteredParts = new FilteredList<>(this.shop.getPartList()); // filteredParts
         //        filteredAppointment = new FilteredList<>(this.shop.getAppointmentList());
 
     }
@@ -258,6 +258,17 @@ public class ModelManager implements Model {
         return filteredPersons;
     }
 
+    // public <T> ObservableList<T> getFilteredVehicleList() { // potential generic? no time to explore.
+    @Override
+    public ObservableList<Customer> getFilteredCustomerList() {
+        return filteredCustomers;
+    }
+
+    @Override
+    public ObservableList<Vehicle> getFilteredVehicleList() {
+        return filteredVehicles;
+    }
+
     @Override
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
@@ -268,6 +279,12 @@ public class ModelManager implements Model {
     public void updateFilteredCustomerList(Predicate<Customer> predicate) {
         requireNonNull(predicate);
         filteredCustomers.setPredicate(predicate);
+    }
+
+    @Override
+    public void updateFilteredVehicleList(Predicate<Vehicle> predicate) {
+        requireNonNull(predicate);
+        filteredVehicles.setPredicate(predicate);
     }
 
     @Override
